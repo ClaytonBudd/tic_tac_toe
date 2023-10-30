@@ -5,7 +5,7 @@ class Board
     @player_1 = Players.new("X", "Player_1")
     @player_2 = Players.new("O", "Player_2")
     @current_player = [@player_1, @player_2].sample
-    @board = [[1, 2, 3],[4, 5, 6],[7, 8, 9]]
+    @board = reset_board()
     @win_conditions = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[7,5,3]]
   end
 
