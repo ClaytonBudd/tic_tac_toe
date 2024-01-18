@@ -29,7 +29,6 @@ class Board
   end
 
   def player_input(current_player)
-    puts "#{current_player}" + " - Please select a space to mark: "
     return gets.chomp.to_i
   end
 end

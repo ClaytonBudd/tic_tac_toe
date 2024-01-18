@@ -1,5 +1,5 @@
 class Player 
-  attr_accessor :marker, :player_id
+  attr_accessor :marker, :player_id, :moves
 
   def initialize(marker, player_id)
     @marker = marker

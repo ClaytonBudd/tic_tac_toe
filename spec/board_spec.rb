@@ -1,6 +1,6 @@
 require "./lib/board.rb"
 require "./lib/game.rb"
-require "./lib/player.rb"
+#require "./lib/player.rb"
 
 describe Board do
   describe "valid_move" do
@@ -65,6 +65,7 @@ end
   end
 
   describe "player_input" do
+    
     before do
       $stdin = StringIO.new("1")
     end
