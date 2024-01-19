@@ -8,7 +8,9 @@ class Player
   end
 
   def update_player_moves(input)
-    @moves.push(input)
+    if input > 0 && input < 10 
+      @moves.push(input)
+    end
   end
 
 end

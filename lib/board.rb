@@ -1,8 +1,5 @@
-require_relative "game.rb"
-
-
 class Board 
-  attr_accessor :availible_moves, :board
+  attr_accessor :availible_moves, :board, :win_conditions
 
   def initialize()
     @availible_moves = [1,2,3,4,5,6,7,8,9]
@@ -24,7 +21,7 @@ class Board
     @board.map{ |row| row.map! { | x | x == input ? current_marker : x }}
   end
 
-  def print_board()
+  def board()
     return "#{@board[0]}" + "\n" + "#{@board[1]}" + "\n" + "#{@board[2]}" + "\n"
   end
 
