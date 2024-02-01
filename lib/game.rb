@@ -21,16 +21,14 @@ class Game
     next_player(@current_player)
     input = @board.player_input(@current_player)
 
-    
-    if @board.valid_move?(input)
-      @board.mark_board(input, @current_player.marker)
-      @current_player.update_player_moves(input)
-      
-    else
+    while @board.valid_move?(input) != true
       @messages.invalid_selection(@board)
-      @board.player_input(@current_player)
-      
+      input = @board.player_input(@current_player)
     end
+    @board.mark_board(input, @current_player.marker)
+    @current_player.update_player_moves(input)
+
+    
     @turns +=1
   end
 
@@ -75,5 +73,5 @@ class Game
 end
 end
 
-game = Game.new
-game.play_game
+# game = Game.new
+# game.play_game

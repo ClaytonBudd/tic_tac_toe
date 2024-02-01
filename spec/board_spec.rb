@@ -38,7 +38,7 @@ describe Board do
       it 'updates the board with X' do
         marker = "X"
         subject.mark_board(1,marker)
-        expect(subject.board).to eq([["X",2,3],[4,5,6],[7,8,9]])
+        expect(subject.board).to eq("[\"X\", 2, 3]"+"\n"+"[4, 5, 6]"+"\n"+"[7, 8, 9]"+"\n")
       end
     end
 
@@ -46,7 +46,7 @@ describe Board do
       it 'updates the board with O' do
         marker = "O"
         subject.mark_board(5,marker)
-        expect(subject.board).to eq([[1,2,3],[4,"O",6],[7,8,9]])
+        expect(subject.board).to eq("[1, 2, 3]" +"\n"+ "[4, \"O\", 6]" +"\n" +"[7, 8, 9]"+"\n")
       end
     end
 
@@ -54,7 +54,7 @@ describe Board do
       it 'isnt a valid input returns board untouched' do
         marker = "X"
         subject.mark_board(10, marker)
-        expect(subject.board).to eq([[1,2,3],[4,5,6],[7,8,9]])
+        expect(subject.board).to eq("[1, 2, 3]" + "\n" +"[4, 5, 6]"+"\n"+"[7, 8, 9]"+"\n")
       end
     end
   end
@@ -62,7 +62,7 @@ describe Board do
   describe 'print_board' do
     context 'board is unmarked' do
       it 'displays the board in terminal' do
-      expect(subject.print_board).to eq("#{[1,2,3]}" + "\n" + "#{[4,5,6]}" + "\n" + "#{[7,8,9]}" + "\n")
+      expect(subject.board).to eq("#{[1,2,3]}" + "\n" + "#{[4,5,6]}" + "\n" + "#{[7,8,9]}" + "\n")
       end
     end
 
@@ -70,7 +70,7 @@ describe Board do
       it 'displays marked board in terminal' do
         marker = "X"
         subject.mark_board(1, marker)
-        expect(subject.print_board).to eq("#{["X",2,3]}" + "\n" + "#{[4,5,6]}" + "\n" + "#{[7,8,9]}" + "\n")
+        expect(subject.board).to eq("#{["X",2,3]}" + "\n" + "#{[4,5,6]}" + "\n" + "#{[7,8,9]}" + "\n")
       end
     end
   end
